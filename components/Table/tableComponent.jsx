@@ -3,6 +3,7 @@ import { IMAGE_1, IMAGE_2, IMAGE_3, IMAGE_4, IMAGE_5, VIEW } from "@/public";
 import Image from "next/image";
 import * as React from "react";
 import { useTable } from "react-table";
+import { motion } from "framer-motion";
 
 const TableData = [
   {
@@ -125,7 +126,13 @@ const TableComponent = () => {
     useTable({ columns, data });
 
   return (
-    <div className="bg-white w-[802px] h-[380px] mt-4 rounded-3xl border border-border_color px-4 pt-5 pb-2 overflow-y-scroll dark:bg-slate-950 dark:border-none">
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: false, amount: 0.25 }}
+      transition={{ duration: 2 }}
+      className="bg-white w-[802px] h-[380px] mt-4 rounded-3xl border border-border_color px-4 pt-5 pb-2 overflow-y-scroll dark:bg-slate-950 dark:border-none"
+    >
       <div>
         <div className="flex justify-between">
           <span className="font-semibold text-text_black dark:text-white">
@@ -169,7 +176,7 @@ const TableComponent = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -19,6 +19,7 @@ import {
   FaTrademark,
 } from "react-icons/fa";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 type showStateProps = {
   isRightSideOpen: () => void;
@@ -31,7 +32,12 @@ const Navbar = ({ isSidebarOpen, isRightSideOpen }: showStateProps) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <nav className="bg-backgrd lg:w-[94vw] w-full fixed h-[77px] lg:px-7 px-4 pt-4 z-50 lg:right-[-3px] right-0 border-b-2 dark:border-slate-700 dark:bg-text_black ">
+    <motion.nav
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="bg-backgrd lg:w-[94vw] w-full fixed h-[77px] lg:px-7 px-4 pt-4 z-50 lg:right-[-3px] right-0 border-b-2 dark:border-slate-700 dark:bg-text_black "
+    >
       <div className="flex justify-between items-center">
         <Link href="" className="lg:hidden block">
           <Image src="/logo.svg" width={40} height={40} alt="logo" />
@@ -141,7 +147,7 @@ const Navbar = ({ isSidebarOpen, isRightSideOpen }: showStateProps) => {
         </div>
         {modal && <Profilemenu open={modal} close={() => setModal(false)} />}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -13,7 +13,7 @@ const Rightside = ({ rightside }: { rightside: boolean }) => {
       enter="transition-all ease-in duration-500"
       enterFrom="transform -translate-x-full"
       enterTo="transform -translate-x-0"
-      leave="transition-all ease-out duration-500"
+      leave="transition-all ease-out duration-900"
       leaveFrom="transform -translate-x-0"
       leaveTo="transform -translate-x-full"
     >

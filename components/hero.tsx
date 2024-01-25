@@ -7,6 +7,7 @@ import BarChart from "./barchar";
 import { barChartData, barChartData_2 } from "@/constants";
 import { useTheme } from "next-themes";
 import { FaArrowDown } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const moment = ["weekly", "daily", "monthly"];
 const Hero = () => {
@@ -45,7 +46,13 @@ const Hero = () => {
   };
   return (
     <section>
-      <div className="lg:max-w-[806px] max-w-[400px]  lg:h-[390px] h-fit lg:px-6 px-2 bg-white rounded-2xl py-3 border border-border_color relative dark:bg-slate-950 dark:border-none ">
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.25 }}
+        transition={{ duration: 2 }}
+        className="lg:max-w-[806px] max-w-[400px]  lg:h-[390px] h-fit lg:px-6 px-2 bg-white rounded-2xl py-3 border border-border_color relative dark:bg-slate-950 dark:border-none "
+      >
         <div className="flex justify-between">
           <span className="mt-1 text-text_black font-semibold lg:text-lg text-sm dark:text-white">
             Sales Trends
@@ -91,7 +98,7 @@ const Hero = () => {
           </div>
         </div>
         <BarChart chartData={userData} />
-      </div>
+      </motion.div>
       <div className="lg:max-w-full max-w-[340px] overflow-x-scroll">
         <TableComponent />
       </div>
