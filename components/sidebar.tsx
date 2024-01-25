@@ -108,14 +108,14 @@ const Sidebar = ({
                 alt="light icon"
                 className={` ${
                   resolvedTheme === "light" ? "bg-active_mode" : ""
-                } rounded-full`}
+                } rounded-full cursor-pointer`}
                 onClick={() => setTheme("light")}
               />
               {resolvedTheme === "dark" ? (
                 <span
                   className={` ${
                     resolvedTheme === "dark" ? "bg-active_mode" : ""
-                  } rounded-full w-6 h-6 p-1 text-white flex justify-center items-center`}
+                  } rounded-full w-6 h-6 p-1 text-white flex justify-center items-center cursor-pointer`}
                 >
                   <FaMoon />
                 </span>
@@ -126,6 +126,7 @@ const Sidebar = ({
                   height={24}
                   alt="moon icon"
                   onClick={() => setTheme("dark")}
+                  className="cursor-pointer"
                 />
               )}
             </div>
