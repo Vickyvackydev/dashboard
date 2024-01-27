@@ -36,13 +36,13 @@ const DashboardUI = ({ children }: { children: React.ReactNode }) => {
             onClick={() => {
               setSidebar(false);
             }}
-            className={`fixed top-0 left-0 bottom-0 w-full bg-gray-800/60 z-20  ${
+            className={`fixed top-0 left-0 bottom-0 w-full bg-gray-800/60 z-50  ${
               sidebar || rightside ? "" : "hidden"
             }`}
           ></div>
         ) : null}
       </div>
-      <Sidebar showSideBar={sidebar} toggleMode={() => {}} />
+      <Sidebar showSideBar={sidebar} />
 
       <div className="flex flex-col">
         <div>

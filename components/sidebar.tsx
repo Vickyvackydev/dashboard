@@ -27,17 +27,11 @@ const lastIcons = [
   },
 ];
 
-const Sidebar = ({
-  showSideBar,
-}: {
-  showSideBar: boolean;
-  toggleMode: any;
-}) => {
+const Sidebar = ({ showSideBar }: { showSideBar: boolean }) => {
   const [clicked, setClicked] = useState(0);
   const [hover, setHover] = useState<boolean | number>(false);
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
-  const isMobileScreeen = useMediaQuery("(max-width: 600px)");
 
   useEffect(() => setMounted(true), []);
 

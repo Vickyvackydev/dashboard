@@ -7,7 +7,7 @@ import { Transition } from "@headlessui/react";
 const Rightside = ({ rightside }: { rightside: boolean }) => {
   return (
     <Transition
-      className={`flex-none h-full w-60 lg:w-fit fixed lg:static z-50 lg:z-0 lg:bg-transparent bg-backgrd dark:bg-text_black lg:mr-5 top-0 shadow-md lg:shadow-none left-0`}
+      className={`flex-none h-full w-60 lg:w-fit fixed lg:static z-[100] lg:z-0 lg:bg-transparent bg-backgrd dark:bg-text_black lg:mr-5 top-0 shadow-md lg:shadow-none left-0`}
       as={"div"}
       show={rightside}
       enter="transition-all ease-in duration-500"
